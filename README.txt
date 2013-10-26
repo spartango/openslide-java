@@ -4,13 +4,16 @@ Build requirements
 - JDK
 - Apache Ant
 - OpenSlide
+- Automake/Autoconf
+- glibtool
 
 Building on Linux or Mac OS X
 -----------------------------
 
-./configure
-make
-make install
+	libtoolize
+	aclocal
+	automake
+	make install
 
 Cross-compiling for Windows with MinGW-w64
 ------------------------------------------
