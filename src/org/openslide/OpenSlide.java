@@ -25,6 +25,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import java.awt.RenderingHints;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -327,6 +328,8 @@ public final class OpenSlide implements Closeable {
         BufferedImage result = new BufferedImage(sw, sh, bufferedImageType);
 
         Graphics2D g = result.createGraphics();
+        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+        g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         paintRegion(g, 0, 0, sx, sy, sw, sh, ds);
         g.dispose();
         return result;
