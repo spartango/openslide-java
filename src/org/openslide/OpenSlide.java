@@ -143,8 +143,8 @@ public final class OpenSlide implements Closeable {
         associatedImages = Collections.unmodifiableMap(associated);
 
         // store hash
-        hashCodeVal = (int) Long.parseLong(getProperties().get(
-                PROPERTY_NAME_QUICKHASH1).substring(0, 8), 16);
+        hashCodeVal = 0;//(int) Long.parseLong(getProperties().get(
+                      // PROPERTY_NAME_QUICKHASH1).substring(0, 8), 16);
 
         // dispose on error, we are in the constructor
         try {
