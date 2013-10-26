@@ -12,7 +12,9 @@ Building on Linux or Mac OS X
 
 	libtoolize
 	aclocal
-	automake
+	autoreconf
+	./configure
+	make
 	make install
 
 Cross-compiling for Windows with MinGW-w64
